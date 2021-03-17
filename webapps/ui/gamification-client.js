@@ -1,6 +1,6 @@
 function updateLeaderBoard() {
     $.ajax({
-        url: "http://localhost:8083/leaders"
+        url: "http://localhost:8082/leaders"
     }).then(function(data) {
         $('#leaderboard-body').empty();
         data.forEach(function(row) {
@@ -12,7 +12,7 @@ function updateLeaderBoard() {
 
 function updateStats(userId) {
     $.ajax({
-        url: "http://localhost:8083/stats?userId=" + userId,
+        url: "http://localhost:8082/stats?userId=" + userId,
         success: function(data) {
             $('#stats-div').show();
             $('#stats-user-id').empty().append(userId);
